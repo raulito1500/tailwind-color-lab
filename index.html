@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Color Lab</title>
+    <meta
+      name="description"
+      content="Match colors to their closest Tailwind CSS class, compare shades, generate full color scales, and check WCAG contrast — all in one free toolkit."
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+  </head>
+  <body class="min-h-screen bg-zinc-50 font-body text-zinc-900 antialiased">
+    <div class="mx-auto flex min-h-screen max-w-5xl flex-col px-6 py-10">
+      <header class="mb-10">
+        <h1 class="font-heading text-3xl font-bold tracking-tight text-zinc-900">
+          Tailwind Color Lab
+        </h1>
+        <p class="mt-2 text-sm text-zinc-500">
+          Match any color to its closest Tailwind class, compare shades side by side,
+          generate a full color scale from a single hex, and check text contrast against
+          WCAG accessibility standards.
+        </p>
+      </header>
+
+      <nav class="mb-8 flex gap-1 border-b border-zinc-200" role="tablist" aria-label="Tools">
+        <button
+          type="button"
+          class="tab-button"
+          data-tab="comparator"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-comparator"
+        >
+          Color Comparator
+        </button>
+        <button
+          type="button"
+          class="tab-button"
+          data-tab="matcher"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-matcher"
+        >
+          Color Matcher
+        </button>
+        <button
+          type="button"
+          class="tab-button"
+          data-tab="scale"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-scale"
+        >
+          Scale Generator
+        </button>
+        <button
+          type="button"
+          class="tab-button"
+          data-tab="a11y"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-a11y"
+        >
+          A11y Inspector
+        </button>
+      </nav>
+
+      <main class="flex-1">
+        <section id="panel-comparator" class="tab-panel" role="tabpanel" aria-labelledby="comparator">
+          <p class="text-sm text-zinc-500">Coming soon.</p>
+        </section>
+        <section id="panel-matcher" class="tab-panel hidden" role="tabpanel" aria-labelledby="matcher">
+          <p class="text-sm text-zinc-500">Coming soon.</p>
+        </section>
+        <section id="panel-scale" class="tab-panel hidden" role="tabpanel" aria-labelledby="scale">
+          <p class="text-sm text-zinc-500">Coming soon.</p>
+        </section>
+        <section id="panel-a11y" class="tab-panel hidden" role="tabpanel" aria-labelledby="a11y">
+          <p class="text-sm text-zinc-500">Coming soon.</p>
+        </section>
+      </main>
+
+      <footer class="mt-16 border-t border-zinc-200 pt-6 text-xs text-zinc-400">
+        <p>A free toolkit for designers and developers working with the Tailwind CSS color system.</p>
+        <p class="mt-2">
+          Made with ❤️ by
+          <a
+            href="https://github.com/raulito1500"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-zinc-500 underline decoration-zinc-300 underline-offset-2 hover:text-zinc-900"
+            >raulito1500</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
