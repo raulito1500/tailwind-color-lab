@@ -69,7 +69,78 @@
 
       <main class="flex-1">
         <section id="panel-comparator" class="tab-panel" role="tabpanel" aria-labelledby="comparator">
-          <p class="text-sm text-zinc-500">Coming soon.</p>
+          <p class="mb-6 text-sm text-zinc-500">
+            Place any two Tailwind shades side by side to compare hue, saturation and lightness.
+          </p>
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div class="color-card" data-comparator-card="a">
+              <div class="mb-4 flex gap-2">
+                <select id="comparator-a-family" class="field-select" aria-label="Color family A"></select>
+                <select id="comparator-a-shade" class="field-select" aria-label="Shade A"></select>
+              </div>
+              <div
+                id="comparator-a-swatch"
+                class="mb-4 h-32 w-full rounded-md border border-zinc-200"
+              ></div>
+              <dl class="space-y-1.5 text-sm">
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">Class</dt>
+                  <dd id="comparator-a-class" class="font-medium text-zinc-900"></dd>
+                </div>
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">HEX</dt>
+                  <dd id="comparator-a-hex" class="text-zinc-600"></dd>
+                </div>
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">RGB</dt>
+                  <dd id="comparator-a-rgb" class="text-zinc-600"></dd>
+                </div>
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">HSL</dt>
+                  <dd id="comparator-a-hsl" class="text-zinc-600"></dd>
+                </div>
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">OKLCH</dt>
+                  <dd id="comparator-a-oklch" class="text-zinc-600"></dd>
+                </div>
+              </dl>
+              <button type="button" id="comparator-a-copy" class="action-button mt-4">Copy class</button>
+            </div>
+
+            <div class="color-card" data-comparator-card="b">
+              <div class="mb-4 flex gap-2">
+                <select id="comparator-b-family" class="field-select" aria-label="Color family B"></select>
+                <select id="comparator-b-shade" class="field-select" aria-label="Shade B"></select>
+              </div>
+              <div
+                id="comparator-b-swatch"
+                class="mb-4 h-32 w-full rounded-md border border-zinc-200"
+              ></div>
+              <dl class="space-y-1.5 text-sm">
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">Class</dt>
+                  <dd id="comparator-b-class" class="font-medium text-zinc-900"></dd>
+                </div>
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">HEX</dt>
+                  <dd id="comparator-b-hex" class="text-zinc-600"></dd>
+                </div>
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">RGB</dt>
+                  <dd id="comparator-b-rgb" class="text-zinc-600"></dd>
+                </div>
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">HSL</dt>
+                  <dd id="comparator-b-hsl" class="text-zinc-600"></dd>
+                </div>
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">OKLCH</dt>
+                  <dd id="comparator-b-oklch" class="text-zinc-600"></dd>
+                </div>
+              </dl>
+              <button type="button" id="comparator-b-copy" class="action-button mt-4">Copy class</button>
+            </div>
+          </div>
         </section>
         <section id="panel-matcher" class="tab-panel hidden" role="tabpanel" aria-labelledby="matcher">
           <p class="text-sm text-zinc-500">Coming soon.</p>

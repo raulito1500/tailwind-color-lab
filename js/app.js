@@ -1,3 +1,5 @@
+import { initComparator } from "./comparator.js";
+
 const tabButtons = document.querySelectorAll(".tab-button");
 
 function activateTab(name) {
@@ -14,3 +16,5 @@ function activateTab(name) {
 tabButtons.forEach((button) => {
   button.addEventListener("click", () => activateTab(button.dataset.tab));
 });
+
+initComparator();
