@@ -1,3 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
 @font-face {
   font-family: "Space Grotesk";
   font-style: normal;
@@ -37,10 +44,6 @@
   font-display: swap;
   src: url("../fonts/inter-600.woff2") format("woff2");
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer components {
   .tab-button {

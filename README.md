@@ -14,7 +14,7 @@ Designers hand off arbitrary hex codes; developers need the closest Tailwind cla
 
 - **Color Comparator** — place any two Tailwind shades side by side to compare hue, saturation and lightness.
 - **Color Matcher** — paste a hex/RGB value and get the closest official Tailwind class, ranked by perceptual (CIELAB ΔE) distance.
-- **Scale Generator** — turn one brand hex into a full 50–950 Tailwind-style scale, exportable as a `tailwind.config.js` snippet.
+- **Scale Generator** — turn one brand hex into a full 50–950 Tailwind-style scale, exportable as a ready-to-paste `@theme` CSS snippet.
 - **A11y Inspector** — check any foreground/background pair against WCAG 2.1 AA/AAA contrast thresholds, with a live text preview.
 
 ## Tech stack & performance

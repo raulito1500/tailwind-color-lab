@@ -1,5 +1,5 @@
 import { TAILWIND_COLORS } from "./colors.js";
-import { hexToRgb, rgbToHsl, rgbToOklch, copyToClipboard } from "./utils.js";
+import { hexToRgb, rgbToHsl, copyToClipboard } from "./utils.js";
 
 const FAMILIES = Object.keys(TAILWIND_COLORS);
 const SHADES = Object.keys(TAILWIND_COLORS.slate).map(Number);
@@ -39,10 +39,9 @@ function initCard(suffix, defaults) {
   function render() {
     const family = familySelect.value;
     const shade = shadeSelect.value;
-    const hex = TAILWIND_COLORS[family][shade];
+    const { hex, oklch } = TAILWIND_COLORS[family][shade];
     const rgb = hexToRgb(hex);
     const hsl = rgbToHsl(rgb);
-    const oklch = rgbToOklch(rgb);
 
     currentClassName = `bg-${family}-${shade}`;
     swatch.style.backgroundColor = hex;
@@ -50,7 +49,7 @@ function initCard(suffix, defaults) {
     hexEl.textContent = hex.toUpperCase();
     rgbEl.textContent = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
     hslEl.textContent = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
-    oklchEl.textContent = `oklch(${oklch.l}% ${oklch.c} ${oklch.h})`;
+    oklchEl.textContent = oklch;
   }
 
   familySelect.addEventListener("change", render);
