@@ -1,4 +1,5 @@
 import { initComparator } from "./comparator.js";
+import { initMatcher } from "./matcher.js";
 
 const tabButtons = document.querySelectorAll(".tab-button");
 
@@ -18,3 +19,4 @@ tabButtons.forEach((button) => {
 });
 
 initComparator();
+initMatcher();

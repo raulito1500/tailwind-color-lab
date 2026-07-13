@@ -143,7 +143,105 @@
           </div>
         </section>
         <section id="panel-matcher" class="tab-panel hidden" role="tabpanel" aria-labelledby="matcher">
-          <p class="text-sm text-zinc-500">Coming soon.</p>
+          <p class="mb-6 text-sm text-zinc-500">
+            Paste any hex color and find the closest official Tailwind class, ranked by
+            perceptual color difference.
+          </p>
+
+          <div class="mb-6 flex flex-wrap items-center gap-3">
+            <input
+              type="color"
+              id="matcher-color-picker"
+              class="h-10 w-12 cursor-pointer rounded-md border border-zinc-300 bg-white p-1"
+              aria-label="Pick a color"
+            />
+            <input
+              type="text"
+              id="matcher-hex-input"
+              class="field-input w-40"
+              placeholder="#1db954"
+              spellcheck="false"
+              aria-label="Hex color value"
+            />
+          </div>
+          <p id="matcher-error" class="mb-6 hidden text-sm text-red-600">
+            Enter a valid hex color, e.g. #1db954 or #1df.
+          </p>
+
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="color-card">
+              <p class="mb-3 text-xs font-medium uppercase tracking-wide text-zinc-400">
+                Your color
+              </p>
+              <div
+                id="matcher-input-swatch"
+                class="mb-4 h-32 w-full rounded-md border border-zinc-200"
+              ></div>
+              <dl class="space-y-1.5 text-sm">
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">HEX</dt>
+                  <dd id="matcher-input-hex-label" class="font-medium text-zinc-900"></dd>
+                </div>
+              </dl>
+              <button type="button" id="matcher-input-copy" class="action-button mt-4">
+                Copy hex
+              </button>
+            </div>
+
+            <div class="color-card">
+              <p class="mb-3 text-xs font-medium uppercase tracking-wide text-zinc-400">
+                Closest match
+              </p>
+              <div
+                id="matcher-match-1-swatch"
+                class="mb-4 h-32 w-full rounded-md border border-zinc-200"
+              ></div>
+              <dl class="space-y-1.5 text-sm">
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">Class</dt>
+                  <dd id="matcher-match-1-class" class="font-medium text-zinc-900"></dd>
+                </div>
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">HEX</dt>
+                  <dd id="matcher-match-1-hex" class="text-zinc-600"></dd>
+                </div>
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">Difference</dt>
+                  <dd id="matcher-match-1-delta" class="text-zinc-600"></dd>
+                </div>
+              </dl>
+              <button type="button" id="matcher-match-1-copy" class="action-button mt-4">
+                Copy class
+              </button>
+            </div>
+
+            <div id="matcher-match-2" class="color-card">
+              <p class="mb-3 text-xs font-medium uppercase tracking-wide text-zinc-400">
+                Also close
+              </p>
+              <div
+                id="matcher-match-2-swatch"
+                class="mb-4 h-32 w-full rounded-md border border-zinc-200"
+              ></div>
+              <dl class="space-y-1.5 text-sm">
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">Class</dt>
+                  <dd id="matcher-match-2-class" class="font-medium text-zinc-900"></dd>
+                </div>
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">HEX</dt>
+                  <dd id="matcher-match-2-hex" class="text-zinc-600"></dd>
+                </div>
+                <div class="flex items-center justify-between">
+                  <dt class="text-zinc-400">Difference</dt>
+                  <dd id="matcher-match-2-delta" class="text-zinc-600"></dd>
+                </div>
+              </dl>
+              <button type="button" id="matcher-match-2-copy" class="action-button mt-4">
+                Copy class
+              </button>
+            </div>
+          </div>
         </section>
         <section id="panel-scale" class="tab-panel hidden" role="tabpanel" aria-labelledby="scale">
           <p class="text-sm text-zinc-500">Coming soon.</p>

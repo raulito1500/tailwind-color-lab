@@ -112,6 +112,35 @@ export function rgbToOklch({ r, g, b }) {
   };
 }
 
+// sRGB -> linear RGB -> XYZ (D65) -> CIELAB.
+export function rgbToLab({ r, g, b }) {
+  const lr = srgbChannelToLinear(r);
+  const lg = srgbChannelToLinear(g);
+  const lb = srgbChannelToLinear(b);
+
+  const x = (0.4124564 * lr + 0.3575761 * lg + 0.1804375 * lb) / 0.95047;
+  const y = 0.2126729 * lr + 0.7151522 * lg + 0.072175 * lb;
+  const z = (0.0193339 * lr + 0.119192 * lg + 0.9503041 * lb) / 1.08883;
+
+  const f = (t) => (t > Math.pow(6 / 29, 3) ? Math.cbrt(t) : t / (3 * Math.pow(6 / 29, 2)) + 4 / 29);
+  const fx = f(x);
+  const fy = f(y);
+  const fz = f(z);
+
+  return {
+    l: 116 * fy - 16,
+    a: 500 * (fx - fy),
+    b: 200 * (fy - fz),
+  };
+}
+
+// CIE76 perceptual color difference: Euclidean distance in CIELAB space.
+export function deltaE76(lab1, lab2) {
+  return Math.sqrt(
+    Math.pow(lab1.l - lab2.l, 2) + Math.pow(lab1.a - lab2.a, 2) + Math.pow(lab1.b - lab2.b, 2)
+  );
+}
+
 export function isValidHex(value) {
   return /^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(value.trim());
 }

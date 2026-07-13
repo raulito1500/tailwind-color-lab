@@ -61,6 +61,10 @@
     @apply flex-1 rounded-md border border-zinc-300 bg-white px-2.5 py-1.5 font-body text-sm text-zinc-700 focus:border-zinc-500 focus:outline-none;
   }
 
+  .field-input {
+    @apply rounded-md border border-zinc-300 bg-white px-2.5 py-1.5 font-body text-sm text-zinc-700 focus:border-zinc-500 focus:outline-none;
+  }
+
   .action-button {
     @apply w-full rounded-md bg-zinc-900 px-3 py-2 font-body text-sm font-medium text-white transition-colors hover:bg-zinc-700;
   }
