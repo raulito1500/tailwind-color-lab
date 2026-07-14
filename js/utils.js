@@ -141,6 +141,23 @@ export function deltaE76(lab1, lab2) {
   );
 }
 
+// Resolves any CSS color string (including oklch()) to sRGB hex using the
+// browser's own color engine via a 1x1 canvas, instead of hand-rolled inverse
+// OKLab math — this gets accurate, spec-correct gamut mapping for free.
+let colorProbeCtx = null;
+export function cssColorToHex(cssColor) {
+  if (!colorProbeCtx) {
+    const canvas = document.createElement("canvas");
+    canvas.width = 1;
+    canvas.height = 1;
+    colorProbeCtx = canvas.getContext("2d");
+  }
+  colorProbeCtx.fillStyle = cssColor;
+  colorProbeCtx.fillRect(0, 0, 1, 1);
+  const [r, g, b] = colorProbeCtx.getImageData(0, 0, 1, 1).data;
+  return "#" + [r, g, b].map((v) => v.toString(16).padStart(2, "0")).join("");
+}
+
 export function isValidHex(value) {
   return /^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(value.trim());
 }
