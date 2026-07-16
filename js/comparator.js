@@ -1,22 +1,8 @@
 import { TAILWIND_COLORS } from "./colors.js";
-import { hexToRgb, rgbToHsl, copyToClipboard } from "./utils.js";
+import { hexToRgb, rgbToHsl, copyToClipboard, capitalize, populateSelect } from "./utils.js";
 
 const FAMILIES = Object.keys(TAILWIND_COLORS);
 const SHADES = Object.keys(TAILWIND_COLORS.slate).map(Number);
-
-function capitalize(word) {
-  return word.charAt(0).toUpperCase() + word.slice(1);
-}
-
-function populateSelect(select, values, formatLabel) {
-  select.innerHTML = "";
-  for (const value of values) {
-    const option = document.createElement("option");
-    option.value = String(value);
-    option.textContent = formatLabel ? formatLabel(value) : String(value);
-    select.append(option);
-  }
-}
 
 function initCard(suffix, defaults) {
   const familySelect = document.getElementById(`comparator-${suffix}-family`);

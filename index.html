@@ -304,7 +304,65 @@
           </div>
         </section>
         <section id="panel-a11y" class="tab-panel hidden" role="tabpanel" aria-labelledby="a11y">
-          <p class="text-sm text-zinc-500">Coming soon.</p>
+          <p class="mb-6 text-sm text-zinc-500">
+            Pick a background and text color to check their contrast against WCAG 2.1 AA/AAA
+            thresholds.
+          </p>
+
+          <div class="mb-6 grid gap-6 sm:grid-cols-2">
+            <div>
+              <p class="mb-2 text-xs font-medium uppercase tracking-wide text-zinc-400">
+                Background
+              </p>
+              <div class="flex gap-2">
+                <select id="a11y-bg-family" class="field-select" aria-label="Background color family"></select>
+                <select id="a11y-bg-shade" class="field-select" aria-label="Background shade"></select>
+              </div>
+            </div>
+            <div>
+              <p class="mb-2 text-xs font-medium uppercase tracking-wide text-zinc-400">
+                Text
+              </p>
+              <div class="flex gap-2">
+                <select id="a11y-text-family" class="field-select" aria-label="Text color family"></select>
+                <select id="a11y-text-shade" class="field-select" aria-label="Text shade"></select>
+              </div>
+            </div>
+          </div>
+
+          <div id="a11y-preview" class="mb-6 rounded-lg border border-zinc-200 p-8">
+            <p id="a11y-preview-normal" class="mb-3 text-base">
+              The quick brown fox jumps over the lazy dog.
+            </p>
+            <p id="a11y-preview-large" class="text-2xl font-bold">The quick brown fox.</p>
+          </div>
+
+          <div class="color-card">
+            <div class="mb-4 flex items-center justify-between">
+              <p class="text-xs font-medium uppercase tracking-wide text-zinc-400">
+                Contrast ratio
+              </p>
+              <p id="a11y-ratio" class="font-heading text-2xl font-bold text-zinc-900"></p>
+            </div>
+            <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <div class="rounded-md border border-zinc-200 p-3 text-center">
+                <p class="mb-1.5 text-xs text-zinc-400">AA · Normal text</p>
+                <span id="a11y-badge-aa-normal" class="inline-block rounded-full px-2 py-0.5 text-xs font-medium"></span>
+              </div>
+              <div class="rounded-md border border-zinc-200 p-3 text-center">
+                <p class="mb-1.5 text-xs text-zinc-400">AAA · Normal text</p>
+                <span id="a11y-badge-aaa-normal" class="inline-block rounded-full px-2 py-0.5 text-xs font-medium"></span>
+              </div>
+              <div class="rounded-md border border-zinc-200 p-3 text-center">
+                <p class="mb-1.5 text-xs text-zinc-400">AA · Large text</p>
+                <span id="a11y-badge-aa-large" class="inline-block rounded-full px-2 py-0.5 text-xs font-medium"></span>
+              </div>
+              <div class="rounded-md border border-zinc-200 p-3 text-center">
+                <p class="mb-1.5 text-xs text-zinc-400">AAA · Large text</p>
+                <span id="a11y-badge-aaa-large" class="inline-block rounded-full px-2 py-0.5 text-xs font-medium"></span>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
 

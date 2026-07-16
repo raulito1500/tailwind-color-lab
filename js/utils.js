@@ -158,10 +158,40 @@ export function cssColorToHex(cssColor) {
   return "#" + [r, g, b].map((v) => v.toString(16).padStart(2, "0")).join("");
 }
 
+// WCAG 2.1 relative luminance and contrast ratio.
+// https://www.w3.org/TR/WCAG21/#dfn-relative-luminance
+export function relativeLuminance({ r, g, b }) {
+  const [rl, gl, bl] = [r, g, b].map(srgbChannelToLinear);
+  return 0.2126 * rl + 0.7152 * gl + 0.0722 * bl;
+}
+
+export function contrastRatio(rgb1, rgb2) {
+  const l1 = relativeLuminance(rgb1);
+  const l2 = relativeLuminance(rgb2);
+  const lighter = Math.max(l1, l2);
+  const darker = Math.min(l1, l2);
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
 export function isValidHex(value) {
   return /^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(value.trim());
 }
 
 export async function copyToClipboard(text) {
   await navigator.clipboard.writeText(text);
+}
+
+// Shared <select> population helpers used by every family/shade picker.
+export function capitalize(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+export function populateSelect(select, values, formatLabel) {
+  select.innerHTML = "";
+  for (const value of values) {
+    const option = document.createElement("option");
+    option.value = String(value);
+    option.textContent = formatLabel ? formatLabel(value) : String(value);
+    select.append(option);
+  }
 }

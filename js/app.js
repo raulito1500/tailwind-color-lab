@@ -1,6 +1,7 @@
 import { initComparator } from "./comparator.js";
 import { initMatcher } from "./matcher.js";
 import { initScaleGenerator } from "./scale.js";
+import { initA11yInspector } from "./a11y.js";
 
 const tabButtons = document.querySelectorAll(".tab-button");
 const TAB_NAMES = Array.from(tabButtons, (button) => button.dataset.tab);
@@ -33,3 +34,4 @@ showTab(location.hash.slice(1) || DEFAULT_TAB);
 initComparator();
 initMatcher();
 initScaleGenerator();
+initA11yInspector();
