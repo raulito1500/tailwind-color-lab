@@ -23,6 +23,8 @@ Designers hand off arbitrary hex codes; developers need the closest Tailwind cla
 - **Tailwind CSS** is the only build-time dependency (`devDependency`), compiled locally with the Tailwind CLI and purged for production.
 - Fonts (Space Grotesk, Inter) are self-hosted `woff2` files — no external font requests at runtime.
 - Deployed as a fully static site to GitHub Pages via GitHub Actions on every push to `main`.
+- **Lighthouse: 99 Performance · 100 Accessibility · 100 Best Practices · 100 SEO.**
+- **~20 KB** of gzipped HTML/CSS/JS, plus **~99 KB** of self-hosted (already-compressed) fonts — about **118 KB** transferred on first load, no render-blocking third-party requests.
 
 ## Getting started
 
